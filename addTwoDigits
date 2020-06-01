@@ -1,0 +1,15 @@
+int addTwoDigits(int n) {
+    int numeroActual = n;
+    int resto = 0;
+    int resultado = 0;
+    
+    // Tomo el resto y divido por 10 (lo voy sumando).
+    while (numeroActual > 0)
+    {
+        resto = numeroActual % 10;
+        numeroActual = numeroActual / 10;
+        resultado = resultado + resto;
+    }
+
+    return resultado;
+}
