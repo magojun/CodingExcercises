@@ -1,0 +1,21 @@
+int largestNumber(int n) {
+    int resultado = 9;
+    int cantidadDigitos = calcularDigitos(resultado);
+    
+    while (cantidadDigitos < n)
+    {
+        // si tengo 9 le sumo 90, si tengo 99 sumo 900 (para tener 999) y así.
+        resultado = resultado + 9 * (int)Math.Pow((double)10, (double)cantidadDigitos);
+
+        // La cantidad de dígitos en un logaritmo de 10, redondeado para abajo + 1.
+        cantidadDigitos = calcularDigitos(resultado);
+    }
+    
+    return resultado;
+}
+
+int calcularDigitos(int numero)
+{
+    int cantDigitos = (int)Math.Floor(Math.Log10((double)numero)+1);
+    return cantDigitos;
+}
